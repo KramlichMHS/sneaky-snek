@@ -1,0 +1,39 @@
+{
+    "image1": {
+        "data": "hwQJAAkAAABAREREAAAAAEREREQEAAAARERERAQAAABEREREBAAAAEREREQEAAAARERERAQAAABE9PREBAAAAET09EQEAAAAQERERAAAAAA=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "headRight"
+    },
+    "image2": {
+        "data": "hwQJAAkAAABAREREAAAAAET09EQEAAAARPT0RAQAAABEREREBAAAAEREREQEAAAARERERAQAAABEREREBAAAAEREREQEAAAAQERERAAAAAA=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "headLeft"
+    },
+    "image3": {
+        "data": "hwQJAAkAAABAREREAAAAAEREREQEAAAARERERAQAAAD0T0REBAAAAEREREQEAAAA9E9ERAQAAABEREREBAAAAEREREQEAAAAQERERAAAAAA=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "headUp"
+    },
+    "image4": {
+        "data": "hwQJAAkAAABAREREAAAAAEREREQEAAAARERERAQAAABERET/BAAAAEREREQEAAAARERE/wQAAABEREREBAAAAEREREQEAAAAQERERAAAAAA=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "headDown"
+    },
+    "image5": {
+        "data": "hwQJAAkAAAAwAAAwAAAAAAMzMwMDAAAAMAAAMAAAAAAwAAAwAAAAADAAADAAAAAAMAAAMAAAAAAwAAAwAAAAAAMzMwMDAAAAMAAAMAAAAAA=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "food"
+    },
+    "anim1": {
+        "namespace": "myAnimations",
+        "id": "anim1",
+        "mimeType": "application/mkcd-animation",
+        "data": "ZTgwMzA5MDAwOTAwMDIwMDQwNDQ0NDQ0NDA0NDQ0NDQ0NDQ0NDQ0NDFmNDQ0NDQ0ZjQ0ZjQ0NDQ0NDQ0NDQ0NDQ0ZjQ0MTQ0NDQ0NGZmNDQ0NDQ0NDQ0NDQwNDQ0NDQ0MDA0MDQ0NDQ0NDQwNDQ0NDQ0NDQ0NDQ0NDRmZjQ0NDQ0NGY0NDE0NDQ0NDQ0NDQ0NDQ0NGY0NGY0NDQ0NDQxZjQ0NDQ0NDQ0NDQ0MDQ0NDQ0NDAw",
+        "displayName": "myAnim"
+    },
+    "*": {
+        "mimeType": "image/x-mkcd-f4",
+        "dataEncoding": "base64",
+        "namespace": "myImages"
+    }
+}
