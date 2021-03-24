@@ -24,6 +24,6 @@
     "supportedTargets": [
         "arcade"
     ],
-    "preferredEditor": "pyprj",
+    "preferredEditor": "tsprj",
     "languageRestriction": "python-only"
 }
