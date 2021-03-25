@@ -1,13 +1,13 @@
 tiles.setTilemap(tilemap`backgroundMap`)
 
-let snek = sprites.create(assets.image`headRight`, SpriteKind.Player)
+
 let x = 80
 let y = 110
-snek.setPosition(x, y)
 let direction = "R"
-let bodyParts = [snek]
+let bodyParts = [sprites.create(assets.image`headRight`, SpriteKind.Player)]
+bodyParts[0].setPosition(x, y)
 
-let body = [[x,y]]
+let body = [[80,110]]
 
 info.player1.setScore(0)
 let food = sprites.create(img`
@@ -32,7 +32,7 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function rightPressed() 
     
     if (direction != "L") {
         direction = "R"
-        snek.setImage(assets.image`headRight`)
+        bodyParts[0].setImage(assets.image`headRight`)
     }
     
 })
@@ -40,7 +40,7 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function leftPressed() {
     
     if (direction != "R") {
         direction = "L"
-        snek.setImage(assets.image`headLeft`)
+        bodyParts[0].setImage(assets.image`headLeft`)
     }
     
 })
@@ -48,7 +48,7 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function upPressed() {
     
     if (direction != "D") {
         direction = "U"
-        snek.setImage(assets.image`headUp`)
+        bodyParts[0].setImage(assets.image`headUp`)
     }
     
 })
@@ -56,31 +56,32 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function downPressed() {
     
     if (direction != "U") {
         direction = "D"
-        snek.setImage(assets.image`headDown`)
+        bodyParts[0].setImage(assets.image`headDown`)
     }
     
 })
 
 //movement
 game.onUpdateInterval(500, function movement() {
-    
-    if (direction == "R") {
-        x += 10
-    } else if (direction == "L") {
-        x -= 10
-    } else if (direction == "U") {
-        y -= 10
-    } else {
-        y += 10
+    for(let i = 1; i < body.length; i++){
+        body[i] = body[i - 1]
+        bodyParts[i].setPosition(body[i][0], body[i][1])
     }
-    /*
-    let temp = body[0]
-    for(let i = 0; i < body.length; i++){
-        temp = body[i]
 
+    if (direction == "R") {
+        body[0][0] += 10
+    } else if (direction == "L") {
+        body[0][0] -= 10
+    } else if (direction == "U") {
+        body[0][1] -= 10
+    } else {
+        body[0][1] += 10
     }
-    */
-    snek.setPosition(x, y)
+    
+    bodyParts[0].setPosition(body[0][0], body[0][1])
+    
+    
+
 })
 
 //food overlap
@@ -98,7 +99,9 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function(sprite: Sprite, o
         5 5 5 5 5 5 5 5 5
         . 5 5 5 5 5 5 5 .
     `)
-    bodyPart.setPosition(x, y)
+    bodyPart.setPosition(-10, -10)
+    body.push([-10,-10])
+    bodyParts.push(bodyPart)
 })
 
 
